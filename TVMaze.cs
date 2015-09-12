@@ -82,32 +82,34 @@ namespace TVMazeAPI
             string results = "";
             string responseBodyAsText = "";
 
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(lookup).AsTask();
-
-            responseBodyAsText = await response.Content.ReadAsStringAsync().AsTask();
-            if (response.ReasonPhrase == "OK")
+            using (HttpClient client = new HttpClient())
             {
-                results = responseBodyAsText.Replace("<br>", Environment.NewLine);
-                results = results.Replace("<p>", "");
-                results = results.Replace("</p>", "");
-                results = results.Replace("<i>", "");
-                results = results.Replace("</i>", "");
-                results = results.Replace("<b>", "");
-                results = results.Replace("</b>", "");
-                results = results.Replace("<li>", "");
-                results = results.Replace("</li>", "");
-                results = results.Replace("<ul>", "");
-                results = results.Replace("</ul>", "");
-                results = results.Replace("<div>", "");
-                results = results.Replace("<br />", "");
-                results = results.Replace("<br/>", "");
-                results = results.Replace("<em>", "");
-                results = results.Replace("<em/>", "");
+                HttpResponseMessage response = await client.GetAsync(lookup).AsTask();
+                responseBodyAsText = await response.Content.ReadAsStringAsync().AsTask();
+                
+                if (response.ReasonPhrase == "OK")
+                {
+                    results = responseBodyAsText.Replace("<br>", Environment.NewLine);
+                    results = results.Replace("<p>", "");
+                    results = results.Replace("</p>", "");
+                    results = results.Replace("<i>", "");
+                    results = results.Replace("</i>", "");
+                    results = results.Replace("<b>", "");
+                    results = results.Replace("</b>", "");
+                    results = results.Replace("<li>", "");
+                    results = results.Replace("</li>", "");
+                    results = results.Replace("<ul>", "");
+                    results = results.Replace("</ul>", "");
+                    results = results.Replace("<div>", "");
+                    results = results.Replace("<br />", "");
+                    results = results.Replace("<br/>", "");
+                    results = results.Replace("<em>", "");
+                    results = results.Replace("<em/>", "");
 
-                return JsonConvert.DeserializeObject<T>(results);
+                    return JsonConvert.DeserializeObject<T>(results);
+                }
+                else return JsonConvert.DeserializeObject<T>(_404Stub);
             }
-            else return JsonConvert.DeserializeObject<T>(_404Stub);
         }
 
         /// <summary>

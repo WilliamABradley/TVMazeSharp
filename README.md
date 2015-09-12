@@ -6,10 +6,11 @@ TVMazeSharp
 
 **A C# wrapper for the TVMaze API.**
 
-I wrote up this API wrapper in 7 Hours, it should hopefully be pretty easy to use. It covers all of the current functionality (As of 12/09/2015 (September)) of the TVMaze API.
-For more information about this API and its more complex functionality (Such as get Series at Page), visit: http://www.tvmaze.com/api
+I wrote up this API wrapper in 7 Hours, it should hopefully be pretty easy to use. It covers all of the current functionality of the TVMaze API (As of 12/09/2015 (September)).
 
-This API doens't have to be instantiated as it doesn't require an API key to access the API.
+**For more information about this API and its more complex functionality (Such as get Series at Page), visit: http://www.tvmaze.com/api**
+
+This API doesn't have to be instantiated as it doesn't require an API key to access the API.
 
 Heres an example of using this API to get a Series using Single Search in Windows 10:
 

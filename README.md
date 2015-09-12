@@ -27,7 +27,7 @@ Heres an example of using this API to get a Series using Single Search in Window
         PrimaryButtonText = "OK"
     }.ShowAsync();
 
-This displays: 
+This displays:  
 ![alt tag](http://puu.sh/k8h6M/c14b06ca62.PNG)
 
 **Notes**  

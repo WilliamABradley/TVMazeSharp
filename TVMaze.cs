@@ -119,6 +119,7 @@ namespace TVMazeAPI
         /// <returns>A collection of results, filled with Show Information</returns>
         public static async Task<IReadOnlyCollection<SearchContainerShow>> FindSeries(string Query)
         {
+            Query = Uri.UnescapeDataString(Query);
             if (string.IsNullOrWhiteSpace(Query)) return new SearchContainerShow[0];
             return await _Get<SearchContainerShow[]>(new Uri(SID_LOOKUP + Query));
         }
@@ -130,6 +131,7 @@ namespace TVMazeAPI
         /// <returns>A collection of results, filled with Actor Information</returns>
         public static async Task<IReadOnlyCollection<SearchContainerPerson>> FindPerson(string Query)
         {
+            Query = Uri.UnescapeDataString(Query);
             if (string.IsNullOrWhiteSpace(Query)) return new SearchContainerPerson[0];
             return await _Get<SearchContainerPerson[]>(new Uri(PEOPLE_LOOKUP + Query));
         }
@@ -188,8 +190,11 @@ namespace TVMazeAPI
         private static async Task<MazeSeries> _GetSeries(Uri uri, bool FetchEpisodes = false, bool FetchCast = false)
         {
             var series = await _Get<MazeSeries>(uri);
-            if (FetchEpisodes) await series.getEpisodes();
-            if (FetchCast) await series.getCast();
+            if (series.status != "404")
+            {
+                if (FetchEpisodes) await series.getEpisodes();
+                if (FetchCast) await series.getCast();
+            }
             return series;
         }
 
@@ -199,7 +204,7 @@ namespace TVMazeAPI
         /// <param name="Query">Show Name</param>
         /// <param name="FetchEpisodes">Fetch episodes in the show, or leave null.</param>
         /// <param name="FetchCast">Fetch Cast in the show, or leave null.</param>
-        public static async Task<MazeSeries> FindSingleSeries(string Query, bool FetchEpisodes = false, bool FetchCast = false) { return await _GetSeries(new Uri(SID_LOOKUP_SINGLE + Query), FetchEpisodes, FetchCast); }
+        public static async Task<MazeSeries> FindSingleSeries(string Query, bool FetchEpisodes = false, bool FetchCast = false) { Query = Uri.EscapeDataString(Query); return await _GetSeries(new Uri(SID_LOOKUP_SINGLE + Query), FetchEpisodes, FetchCast); }
         /// <summary>
         /// Search the scaper by TVMaze Series ID.
         /// </summary>

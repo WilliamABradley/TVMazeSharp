@@ -106,9 +106,11 @@ namespace TVMazeAPI
                     results = results.Replace("<em>", "");
                     results = results.Replace("<em/>", "");
 
-                    return JsonConvert.DeserializeObject<T>(results);
+                    try { return JsonConvert.DeserializeObject<T>(results); }
+                    catch (JsonSerializationException) { return default(T); }
                 }
-                else return JsonConvert.DeserializeObject<T>(_404Stub);
+                try { return JsonConvert.DeserializeObject<T>(_404Stub); }
+                catch (JsonSerializationException) { return default(T); }
             }
         }
 

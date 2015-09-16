@@ -9,11 +9,13 @@ TVMazeSharp
 I wrote up this API wrapper in 7 Hours, it should hopefully be pretty easy to use. It covers all of the current functionality of the TVMaze API (As of 12/09/2015 (September)).
 
 =========
-**unfortunately this Project file only works in Visual Studio 2015, as it uses Nuget 3.0. This can however be fixed by creating a new Class Library in VS2013, going into Nuget Manager and getting Newtonsoft.Json, and then adding my the Models folder and the class file into the project.**
+
+**Unfortunately this Project file only works in Visual Studio 2015, as it uses Nuget 3.0. This can however be fixed by creating a new Class Library in VS2013, going into Nuget Manager and getting Newtonsoft.Json, and then adding my the Models folder and the class file into the project.**
 
 **If you do this however, make sure that the Namespaces are the same.**
 
 **VS2015 Community is free and supports extensions so it would be better getting it.**
+
 =========
 
 **For more information about this API and its more complex functionality (Such as get Series at Page), visit: http://www.tvmaze.com/api**

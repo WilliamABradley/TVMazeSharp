@@ -10,7 +10,7 @@ I wrote up this API wrapper in 7 Hours, it should hopefully be pretty easy to us
 
 =========
 
-**Unfortunately this Project file only works in Visual Studio 2015, as it uses Nuget 3.0. This can however be fixed by creating a new Class Library in VS2013, going into Nuget Manager and getting Newtonsoft.Json, and then adding my the Models folder and the class file into the project.**
+**Unfortunately this Project file only works in Visual Studio 2015, as it uses Nuget 3.0. This can however be fixed by creating a new Class Library in VS2013, going into Nuget Manager and getting Newtonsoft.Json, and then adding my Models folder and the class file into the project.**
 
 **If you do this however, make sure that the Namespaces are the same.**
 

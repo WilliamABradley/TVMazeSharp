@@ -30,11 +30,11 @@ namespace TVMazeAPI.Models
         /// <summary>
         /// The Day that the Episode was/is First Aired.
         /// </summary>
-        public DateTime airdate { get; set; }
+        public DateTime? airdate { get; set; }
         /// <summary>
         /// Specfic Timezone offset time, for the AirTime of the Episode.
         /// </summary>
-        public DateTimeOffset airstamp { get; set; }
+        public DateTimeOffset? airstamp { get; set; }
         /// <summary>
         /// How many minutes the Episode ran for.
         /// </summary>

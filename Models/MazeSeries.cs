@@ -44,7 +44,7 @@ namespace TVMazeAPI.Models
         /// <summary>
         /// Specfic Date when the First Episode of the show aired.
         /// </summary>
-        public DateTime premiered { get; set; }
+        public DateTime? premiered { get; set; }
         /// <summary>
         /// Rating of the Show by the community.
         /// </summary>

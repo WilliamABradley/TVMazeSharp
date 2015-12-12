@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Windows.Web.Http;
+using System.Net.Http;
 using TVMazeAPI.Models;
 using Newtonsoft.Json;
 
@@ -84,8 +84,8 @@ namespace TVMazeAPI
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(lookup).AsTask();
-                responseBodyAsText = await response.Content.ReadAsStringAsync().AsTask();
+                HttpResponseMessage response = await client.GetAsync(lookup);
+                responseBodyAsText = await response.Content.ReadAsStringAsync();
                 
                 if (response.ReasonPhrase == "OK")
                 {

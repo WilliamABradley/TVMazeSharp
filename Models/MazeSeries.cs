@@ -40,7 +40,7 @@ namespace TVMazeAPI.Models
         /// <summary>
         /// Images of the Episode.
         /// </summary>
-        public int runtime { get; set; }
+        public int? runtime { get; set; }
         /// <summary>
         /// Specfic Date when the First Episode of the show aired.
         /// </summary>

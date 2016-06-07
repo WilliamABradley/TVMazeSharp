@@ -1,9 +1,4 @@
-# TVMazeSharp
-.Net wrapper for the TVMaze API
-
-TVMazeSharp
-=========
-
+#TVMazeSharp
 **A C# wrapper for the TVMaze API.**
 
 I wrote up this API wrapper in 7 Hours, it should hopefully be pretty easy to use. It covers all of the current functionality of the TVMaze API (As of 12/09/2015 (September)).

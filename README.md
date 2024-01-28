@@ -39,7 +39,3 @@ Heres an example of using this API to get a Series using Single Search in Window
 
 This displays:  
 ![alt tag](http://puu.sh/k8h6M/c14b06ca62.PNG)
-
-**Notes**  
-If you encounter any issues or have a suggestion: don't hesitate to open a ticket, you will be helping me too.  
-Should you wish to do so, you can contact me at `williamabradley@outlook.com`.
